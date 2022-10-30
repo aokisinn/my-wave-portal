@@ -10,10 +10,27 @@ npx hardhat compile
 npx hardhat test
 ```
 
+### 3. ローカルデプロイ
+失敗するので後で確認
+```
+npx hardhat run scripts/deploy.js --network localhost
+```
+
 ## 開発フロー
 1. コントラクト作成
 2. ローカル環境で、ブロックチェーン上デプロイ
 3. 動作確認 (console.logなどで)
     - 実行コマンド
         - npx hardhat run scripts/run.js
+        ※ 実行後 作成したネットワークは自動で削除
 4. ...etc
+
+## ネットワークを一時的に永続させる
+- npx hardhat node
+Hardhat から 20 個のアカウント提供(1000ETH)
+
+## scripts
+- deploy.js
+    - 本番用のスクリプト
+- run.js
+    - 開発環境用のスクリプト
