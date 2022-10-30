@@ -12,8 +12,31 @@ pragma solidity ^0.8.17;
 import "hardhat/console.sol";
 
 contract WavePortal {
+    // 状態変数 永続的に保存されう変数
+    uint256 totalWaves;
+
     // 通常のClass同様最初に実行される
     constructor() {
         console.log("Here is my first smart contract!");
+    }
+
+    // totalWavesに追加する
+    // public 誰でも呼べる変数
+    // 他 private, internal, external
+    // 関数修飾子 を指定してないのでガス代がかかる
+    function wave() public {
+        totalWaves += 1;
+        // msg.sender
+        // 呼び出したアドレス
+        console.log("%s has waved!", msg.sender);
+    }
+    
+    // View 関数修飾子
+    // View 読み取りのみの関数 状態変数に対して変更がない
+    // view pure関数を指定するとガス代がかからない
+    // TODO pureに対しては後で調べる
+    function getTotalWaves() public view returns (uint256) {
+        console.log("We have %d total waves!", totalWaves);
+        return totalWaves;
     }
 }
