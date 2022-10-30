@@ -14,4 +14,6 @@ npx hardhat test
 1. コントラクト作成
 2. ローカル環境で、ブロックチェーン上デプロイ
 3. 動作確認 (console.logなどで)
+    - 実行コマンド
+        - npx hardhat run scripts/run.js
 4. ...etc
