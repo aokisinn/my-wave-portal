@@ -11,8 +11,10 @@ npx hardhat test
 ```
 
 ### 3. ローカルデプロイ
-失敗するので後で確認
 ```
+# localNode　立ち上げ
+npx hardhat node
+# localのNodeに対してデプロイ
 npx hardhat run scripts/deploy.js --network localhost
 ```
 
